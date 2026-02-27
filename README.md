@@ -38,19 +38,16 @@ The framework automatically detects:
 - systemd availability
 
 ---
-```
+
 ## Project Structure
 
+```
 linux-hardening/
-|
-|---hardening.sh
-|
-|---modules/
-|	|
-|	|---ssh_hardening.sh
-|	|---fail2ban.sh
-|
-|--- README.md	
+├ hardening.sh
+├ README.md
+├ modules
+	├ ssh_hardening.sh
+	├ fail2ban.sh
 
 ```
 ## What it does
