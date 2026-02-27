@@ -38,10 +38,9 @@ The framework automatically detects:
 - systemd availability
 
 ---
-
+```
 ## Project Structure
 
-```
 linux-hardening/
 |
 |---hardening.sh
