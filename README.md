@@ -40,7 +40,7 @@ The framework automatically detects:
 ---
 
 ## Project Structure
-
+```
 linux-hardening/
 |
 |---hardening.sh
@@ -51,7 +51,7 @@ linux-hardening/
 |	|---fail2ban.sh
 |
 |--- README.md	
-
+```
 ## What it does
 
 ## SSH hardening
