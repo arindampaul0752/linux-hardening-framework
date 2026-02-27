@@ -45,7 +45,7 @@ The framework automatically detects:
 linux-hardening/
 ├ hardening.sh
 |
-├ modules
+├ modules/
 |	├ ssh_hardening.sh
 |	├ fail2ban.sh
 |
