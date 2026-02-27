@@ -1,6 +1,6 @@
 # Linux Hardening Framework
 
-A modular Bash-based Linux hardening framework designed to secure SSH access and mitigate brute-force attacks major Linux distributions.
+A modular Bash-based Linux hardening framework designed to secure SSH access and mitigate brute-force attacks among major Linux distributions.
 
 This project focuses on safe automation, portability, and production-aware practices.
 
