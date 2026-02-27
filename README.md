@@ -40,7 +40,7 @@ The framework automatically detects:
 ---
 
 ## Project Structure
-```
+```bash
 linux-hardening/
 |
 |---hardening.sh
