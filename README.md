@@ -52,9 +52,11 @@ linux-hardening/
 ├ README.md
 
 ```
+---
+
 ## What it does
 
-## SSH hardening
+### SSH hardening
 
 - Disables root login
 - Disables password authentication
@@ -66,7 +68,6 @@ linux-hardening/
 - Prevents lockout by verifying SSH key presence
 - Automatically rolls back if config validation fails
 
----
 
 ### Fail2Ban Protection
 
