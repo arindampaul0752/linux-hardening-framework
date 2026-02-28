@@ -84,6 +84,46 @@ Recidive Jail Settings:
 
 ---
 
+## Prerequisites
+
+- systemd-based linux distribution
+- Root or sudo privileges
+- Active SSH service
+- Internet connection (for package installation)
+
+---
+
+## Verification
+
+Check SSH service:
+
+```bash
+systemctl status ssh
+
+```
+Check Fail2Ban:
+
+```bash
+fail2ban-client status
+
+```
+
+Check recidive jail:
+
+```bash
+fail2ban-client status recidive
+
+```
+
+View logs:
+
+```bash
+cat /var/log/linux-hardening.log
+
+```
+
+---
+
 ## Usage
 
 Run as root:
