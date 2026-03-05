@@ -2,7 +2,7 @@
 set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_FILE ="/var/log/linux-hardening.log"
+LOG_FILE="/var/log/linux-hardening.log"
 
 DRY_RUN=false
 ONLY_MODULE=""
