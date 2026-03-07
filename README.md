@@ -44,12 +44,10 @@ The framework automatically detects:
 ```
 linux-hardening/
 ├ hardening.sh
-|
-├ modules/
-|	├ ssh_hardening.sh
-|	├ fail2ban.sh
-|
 ├ README.md
+├ modules/
+	├ ssh_hardening.sh
+	├ fail2ban.sh
 
 ```
 ---
