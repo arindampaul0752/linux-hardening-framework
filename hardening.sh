@@ -18,7 +18,7 @@ run_cmd() {
 	if $DRY_RUN; then
 		log "DRY-RUN" "$*"
 	else
-		"$@"
+		eval "$*"
 	fi
 }
 
@@ -69,9 +69,9 @@ detect_environment() {
 		exit 1
 	fi
 
-	if systemctl list-units-files | grep -q '^sshd.service'; then
+	if systemctl list-unit-files | grep -q '^sshd.service'; then
 		SSH_SERVICE="sshd"
-	elif systemctl list-units-files | grep -q '^ssh.service'; then
+	elif systemctl list-unit-files | grep -q '^ssh.service'; then
 		SSH_SERVICE="ssh"
 	else
 		log "ERROR" "SSH service not found."
@@ -88,6 +88,7 @@ install_package() {
 		apt)
 			apt update -y
 			apt install -y "$1"
+			;;
 		dnf)
 			dnf install -y "$1"
 			;;
@@ -95,7 +96,7 @@ install_package() {
 			yum install -y "$1"
 			;;
 		pacman)
-			pacamn -Sy --noconfirm "$1"
+			pacman -Sy --noconfirm "$1"
 			;;
 	esac
 }

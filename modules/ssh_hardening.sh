@@ -3,15 +3,15 @@ harden_ssh() {
 	log "INFO" "Hardening SSH..."
 
 	local SSH_CONFIG="/etc/ssh/sshd_config"
-	local BACKUP="${SSHD_CONFIG}.bak.$(date +%F-%H%M%S)"
+	local BACKUP="${SSH_CONFIG}.bak.$(date +%F-%H%M%S)"
 
 	[[ -f "$SSH_CONFIG" ]] || { log "ERROR" "sshd_config missing"; exit 1; }
 	command -v sshd >/dev/null 2>&1 || { log "ERROR" "sshd not found"; exit 1; }
 
 	run_cmd "cp $SSH_CONFIG $BACKUP"
 
-	SSH_USER="${SUDO_USER: -root}"
-	USER_HOME=$(eval echo "~$SSH_USER")
+	SSH_USER=$(logname)
+	USER_HOME=$(getent passwd "$SSH_USER" | cut -d: -f6)
 	AUTH_KEYS="$USER_HOME/.ssh/authorized_keys"
 
 	if [[ ! -f "$AUTH_KEYS" || ! -s "$AUTH_KEYS" ]];  then
@@ -50,7 +50,7 @@ harden_ssh() {
 		fi
 	fi
 
-	service_reload "$SSH_CONFIG"
+	service_reload "$SSH_SERVICE"
 
 	log "INFO" "SSH hardened successfully."
 	
